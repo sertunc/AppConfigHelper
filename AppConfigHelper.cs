@@ -6,17 +6,6 @@ public class AppConfigHelper
         private XmlDocument xmlDoc;
         private string _appConfigName;
 
-        public AppConfigHelper()
-        {
-            _appConfigName = "App.config";
-
-            if (xmlDoc == null)
-            {
-                xmlDoc = new XmlDocument();
-                xmlDoc.Load(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\" + _appConfigName);
-            }
-        }
-
         public AppConfigHelper(string appConfigName)
         {
             _appConfigName = appConfigName;
@@ -24,7 +13,7 @@ public class AppConfigHelper
             if (xmlDoc == null)
             {
                 xmlDoc = new XmlDocument();
-                xmlDoc.Load(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\" + _appConfigName);
+                xmlDoc.Load(Application.StartupPath + "\\" + _appConfigName);
             }
         }
 
